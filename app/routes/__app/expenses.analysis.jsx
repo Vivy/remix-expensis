@@ -1,22 +1,10 @@
-const DUMMY_EXPENSES = [
-  {
-    id: 'el',
-    title: 'First Expense',
-    amount: 29.98,
-    data: new Date().toISOString(),
-  },
-  {
-    id: 'him',
-    title: 'Second Expense',
-    amount: 12.99,
-    data: new Date().toISOString(),
-  },
-];
-
 import ExpenseStatistics from '~/components/expenses/ExpenseStatistics';
 import Chart from '~/components/expenses/Chart';
+import { useLoaderData } from '@remix-run/react';
+export { loader } from '../expenses.raw';
 
 export default function ExpensesAnalysisPage() {
+  const DUMMY_EXPENSES = useLoaderData();
   return (
     <main>
       <Chart expenses={DUMMY_EXPENSES} />

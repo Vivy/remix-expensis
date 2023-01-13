@@ -18,20 +18,40 @@ function Chart({ expenses }) {
 
   for (const expense of expenses) {
     const expenseMonth = new Date(expense.date).getMonth(); // starting at 0 => January => 0
-    chartDataPoints[expenseMonth].value += expense.amount;
+    // console.log(expense, 'this is expense');
+    // console.log(expenses, 'this is expenseSS');
+    // console.log(expense.date, 'this is expense.date');
+    // console.log(expenseMonth, 'this is expenseMONTH');
+    chartDataPoints[expenseMonth]?.value += expense.amount;
   }
 
+  // const progress = expenses.reduce((acc, curr) => {
+  //   const expenseMonth = new Date(curr.date).getMonth();
+  //   // acc[expenseMonth] = 9;
+  //   console.log(curr.amount, 'This is CURR');
+  //   if (expenseMonth in acc) {
+  //     acc[expenseMonth] = acc[expenseMonth] + curr.amount;
+  //   } else {
+  //     acc[expenseMonth] = curr.amount;
+  //   }
+
+  //   return acc;
+  // }, {});
+
+  // console.log(progress, 'This is progress');
+
   const dataPointValues = chartDataPoints.map((dataPoint) => dataPoint.value);
+  // const totalMaximum = Math.max(...dataPointValues);
   const totalMaximum = Math.max(...dataPointValues);
 
   return (
     <section>
       <h2>Monthly Expenses</h2>
       <ol className='chart'>
-        {chartDataPoints.map((dataPoint) => (
+        {chartDataPoints.map((dataPoint, key) => (
           <ChartBar
             key={dataPoint.label}
-            value={dataPoint.value}
+            value={progress[key]}
             maxValue={totalMaximum}
             label={dataPoint.label}
           />
