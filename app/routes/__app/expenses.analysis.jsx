@@ -2,13 +2,13 @@ const DUMMY_EXPENSES = [
   {
     id: 'el',
     title: 'First Expense',
-    amount: 69,
+    amount: 29.98,
     data: new Date().toISOString(),
   },
   {
     id: 'him',
     title: 'Second Expense',
-    amount: 169,
+    amount: 12.99,
     data: new Date().toISOString(),
   },
 ];
