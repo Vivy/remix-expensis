@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
+import authStyles from '~/styles/auth.css';
+import AuthForm from '~/components/auth/AuthForm';
 
-const Auth = () => {
-  return (
-    <div>
-      <Link to='/'>Home Page</Link>
-      <Link to='/pricing'>PricingPage</Link>
-      <h1>Authentification Page</h1>
-    </div>
-  );
-};
+export default function AuthPage() {
+  return <AuthForm />;
+}
 
-export default Auth;
+export function links() {
+  return [
+    {
+      rel: 'stylesheet',
+      href: authStyles,
+    },
+  ];
+}
