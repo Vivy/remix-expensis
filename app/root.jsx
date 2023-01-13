@@ -8,6 +8,7 @@ import {
 } from '@remix-run/react';
 
 import sharedStyles from '~/styles/shared.css';
+import MainHeader from '~/components/navigation/MainHeader';
 
 export const meta = () => ({
   charset: 'utf-8',
@@ -23,6 +24,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <MainHeader />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

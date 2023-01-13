@@ -1,5 +1,5 @@
-const UpdateExpensesPage = () => {
-  return <h1>Update Expenses Page</h1>;
-};
+import ExpenseForm from '~/components/expenses/ExpenseForm';
 
-export default UpdateExpensesPage;
+export default function UpdateExpensesPage() {
+  return <ExpenseForm />;
+}
